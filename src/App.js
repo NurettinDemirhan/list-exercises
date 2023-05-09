@@ -4,6 +4,7 @@ import TodoList from './ToDoList';
 import Language from './Language';
 import { ClickCounter } from './ClickCounter';
 import Login from './Login';
+import Counter from './Counter';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         {/* <Language/> */}
         <ClickCounter onCounterChange={handleCounterChange}/>
         <Login/>
+        <Counter/>
       </header>
     </div>
   );
