@@ -6,6 +6,7 @@ import { ClickCounter } from './ClickCounter';
 import Login from './Login';
 import Counter from './Counter';
 import GithubUser from './GithubUser';
+import GithubUserList from './GithubUserList';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Login/>
         <Counter/>
         <GithubUser/>
+        <GithubUserList/>
       </header>
     </div>
   );
