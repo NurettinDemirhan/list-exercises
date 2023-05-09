@@ -11,6 +11,9 @@ function TodoList() {
       e.target.reset();
     }
   }
+  function resetItems() {
+    setItems([]);
+  }
 
   return (
     <div>
@@ -23,6 +26,7 @@ function TodoList() {
           <li key={index}>{item}</li>
         ))}
       </ul>
+      <button onClick={resetItems}>Reset</button>
     </div>
   );
 }
