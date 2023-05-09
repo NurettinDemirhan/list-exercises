@@ -6,6 +6,12 @@ import { ClickCounter } from './ClickCounter';
 import Login from './Login';
 
 function App() {
+
+  const handleCounterChange = (value) => {
+    console.log(`Counter value changed: ${value}`);
+  };
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,7 +29,7 @@ function App() {
           )}
         /> */}
         {/* <Language/> */}
-        <ClickCounter/>
+        <ClickCounter onCounterChange={handleCounterChange}/>
         <Login/>
       </header>
     </div>
