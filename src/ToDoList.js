@@ -14,6 +14,9 @@ function TodoList() {
   function resetItems() {
     setItems([]);
   }
+  function removeItem(index) {
+    setItems(items.filter((_, i) => i !== index));
+  }
 
   return (
     <div>
@@ -23,7 +26,10 @@ function TodoList() {
       </form>
       <ul>
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+          {item}
+          <button onClick={() => removeItem(index)}>Remove</button>
+        </li>
         ))}
       </ul>
       <button onClick={resetItems}>Reset</button>
