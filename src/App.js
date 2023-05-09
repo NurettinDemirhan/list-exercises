@@ -5,6 +5,7 @@ import Language from './Language';
 import { ClickCounter } from './ClickCounter';
 import Login from './Login';
 import Counter from './Counter';
+import GithubUser from './GithubUser';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <ClickCounter onCounterChange={handleCounterChange}/>
         <Login/>
         <Counter/>
+        <GithubUser/>
       </header>
     </div>
   );
