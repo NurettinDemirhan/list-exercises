@@ -5,10 +5,16 @@ const LanguageContext = React.createContext();
 
 
 const DisplayLanguage = () => {
-  const { language } = React.useContext(LanguageContext);
-
-  return <div>Current Language: {language}</div>;
-};
+    return (
+      <LanguageContext.Consumer>
+        {({ language }) => (
+          <div>
+            <h1>Selected Language: {language}</h1>
+          </div>
+        )}
+      </LanguageContext.Consumer>
+    );
+  };
 
 const Language = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
