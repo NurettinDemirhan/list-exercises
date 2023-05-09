@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import TodoList from './ToDoList';
+import Language from './Language';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             </ul>
           )}
         />
+        <Language/>
       </header>
     </div>
   );
