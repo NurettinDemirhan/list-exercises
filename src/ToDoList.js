@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TodoList() {
+function TodoList({ render }) {
   const [items, setItems] = useState([]);
 
   function addItem(e) {
@@ -11,9 +11,7 @@ function TodoList() {
       e.target.reset();
     }
   }
-  function resetItems() {
-    setItems([]);
-  }
+
   function removeItem(index) {
     setItems(items.filter((_, i) => i !== index));
   }
@@ -24,15 +22,7 @@ function TodoList() {
         <input type="text" name="newItem" />
         <button type="submit">Add Item</button>
       </form>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-          {item}
-          <button onClick={() => removeItem(index)}>Remove</button>
-        </li>
-        ))}
-      </ul>
-      <button onClick={resetItems}>Reset</button>
+      {render(items, removeItem)}
     </div>
   );
 }

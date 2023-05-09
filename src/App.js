@@ -7,7 +7,18 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <TodoList/>
+        <TodoList
+          render={(items, removeItem) => (
+            <ul>
+              {items.map((item, index) => (
+                <li key={index}>
+                  {item}
+                  <button onClick={() => removeItem(index)}>Remove</button>
+                </li>
+              ))}
+            </ul>
+          )}
+        />
       </header>
     </div>
   );
