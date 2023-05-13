@@ -9,6 +9,8 @@ import GithubUser from './GithubUser';
 import GithubUserList from './GithubUserList';
 import { UseCounterComponent } from './UseCounter';
 import FormComponent from './UseFormState';
+import CarDetails from './CarDetails';
+import { useState } from 'react';
 
 function App() {
 
@@ -16,14 +18,18 @@ function App() {
     console.log(`Counter value changed: ${value}`);
   };
 
+  const [carData, setCarData] = useState({
+    model: '',
+    year: '',
+    color: '',
+  });
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <ClickCounter onCounterChange={handleCounterChange}/>
-        <FormComponent/>
-        <GithubUser/>
+        <CarDetails initialData={carData}/>
       </header>
     </div>
   );
