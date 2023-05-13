@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const LanguageContext = React.createContext();
 
-
+//already a function component
 const DisplayLanguage = () => {
     return (
       <LanguageContext.Consumer>
