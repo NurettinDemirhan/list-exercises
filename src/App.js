@@ -7,6 +7,7 @@ import Login from './Login';
 import Counter from './Counter';
 import GithubUser from './GithubUser';
 import GithubUserList from './GithubUserList';
+import { UseCounterComponent } from './UseCounter';
 
 function App() {
 
@@ -19,24 +20,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <TodoList
-          render={(items, removeItem) => (
-            <ul>
-              {items.map((item, index) => (
-                <li key={index}>
-                  {item}
-                  <button onClick={() => removeItem(index)}>Remove</button>
-                </li>
-              ))}
-            </ul>
-          )}
-        /> */}
-        {/* <Language/> */}
         <ClickCounter onCounterChange={handleCounterChange}/>
-        <Login/>
-        <Counter/>
-        <GithubUser/>
-        <GithubUserList/>
+        <UseCounterComponent/>
       </header>
     </div>
   );
