@@ -23,6 +23,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <ClickCounter onCounterChange={handleCounterChange}/>
         <FormComponent/>
+        <GithubUser/>
       </header>
     </div>
   );
