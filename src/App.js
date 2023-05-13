@@ -11,25 +11,34 @@ import { UseCounterComponent } from './UseCounter';
 import FormComponent from './UseFormState';
 import CarDetails from './CarDetails';
 import { useState } from 'react';
+import FilteredList from './FilteredList';
 
 function App() {
 
-  const handleCounterChange = (value) => {
-    console.log(`Counter value changed: ${value}`);
-  };
-
-  const [carData, setCarData] = useState({
-    model: '',
-    year: '',
-    color: '',
-  });
+  const list =[
+    {
+      name:"nuri1",
+      id: 1,
+      age: 19
+    },
+    {
+      name:"nuri2",
+      id: 1,
+      age: 15
+    },
+    {
+      name:"nuri3",
+      id: 3,
+      age: 11
+    }
+  ]
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ClickCounter onCounterChange={handleCounterChange}/>
         <UseCounterComponent/>
+        <FilteredList list={list}/>
       </header>
     </div>
   );
