@@ -29,7 +29,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <ClickCounter onCounterChange={handleCounterChange}/>
-        <CarDetails initialData={carData}/>
+        <UseCounterComponent/>
       </header>
     </div>
   );
