@@ -8,6 +8,7 @@ import Counter from './Counter';
 import GithubUser from './GithubUser';
 import GithubUserList from './GithubUserList';
 import { UseCounterComponent } from './UseCounter';
+import FormComponent from './UseFormState';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <ClickCounter onCounterChange={handleCounterChange}/>
-        <UseCounterComponent/>
+        <FormComponent/>
       </header>
     </div>
   );
