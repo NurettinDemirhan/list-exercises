@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useGithubUser from './UseGithubUser';
 
-function GithubUser({ username }) {
-  const { userData, loading } = useGithubUser(username);
+function GithubUser() {
+  const [username, setUsername] = useState('');
+  const { userData, loading, error, fetchUserData } = useGithubUser();
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!userData) {
-    return <div>No user data found for {username}</div>;
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetchUserData(username);
+  };
 
   return (
     <div>
-      <h2>{userData.name}</h2>
-      <p>{userData.bio}</p>
-      <p>Followers: {userData.followers}</p>
-      <p>Following: {userData.following}</p>
-      <p>Public Repos: {userData.public_repos}</p>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Enter a Github username:
+          <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+        </label>
+        <button type="submit">Fetch user data</button>
+      </form>
+
+      {loading && <div>Loading...</div>}
+
+      {error && (
+        <div>
+          Error fetching user data: {error.message}
+        </div>
+      )}
+
+      {userData && (
+        <div>
+          <h2>{userData.name}</h2>
+          <p>{userData.bio}</p>
+          <p>Followers: {userData.followers}</p>
+          <p>Following: {userData.following}</p>
+          <p>Public Repos: {userData.public_repos}</p>
+        </div>
+      )}
     </div>
   );
 }
